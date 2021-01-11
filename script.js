@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('#new').hide();
    $('.intro').fadeOut(4000);
    $('#new').fadeIn(6000);
+   $('#load').hide();
 const sett = {
    "async": true,
    "crossDomain": true,
@@ -42,8 +43,11 @@ $('#li5').append(rec);
           "height","20px"
       );
   });
-  $('button').click(function()
+  $('#sub').click(function()
   {
+      $('#temp_country').empty();
+      $('#load').show();
+   
     var n=$('#name').val();
     //alert(n);
     
@@ -75,6 +79,8 @@ $('#time_date').empty();
  $('#time_date').append("Last Checked:"+tim);
 $('#li1,#li2,#li3,#li4,#li5').empty();
 $("#temp_country").empty();
+$('#load').hide();
+
     $("#temp_country").append(n);
 $('#li1').append(conf);
 $('#li2').append(deat);
