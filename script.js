@@ -43,7 +43,7 @@ $('#li5').append(rec);
           "height","20px"
       );
   });
-  $('#sub').click(function()
+  $('#name').keyup(function()
   {
       $('#temp_country').empty();
       $('#load').show();
