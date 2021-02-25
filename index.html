@@ -9,81 +9,252 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+      #new{
+        font-size: 40px;
+      }
+      .nav-link{
+          font-size: 20px;
+      }
+      @media only screen and (max-width: 600px) {
+  #new {
+    font-size: 25px;
+  }
+
+}.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #343a40; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    background-color: #343a40;
+}
+
+.links{
+    float: right;
+    display: inline-block;
+}
+.links a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #DFDFEF;
+    margin: 10px;
+}
+.logo{
+    color: #DFDFEF;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.3%;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+@media screen and (max-width:600px) {
+   #home ,#about,#data{
+       display: none;
+   }
+  #sv{
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block !important; 
+  }
+  .c1,.c2{
+   width: 100% !important;
+   position: relative;
+   left: 0 !important;
+   margin-bottom: 10px ;
+   padding: 0px !important;
+  }
+  .c1{
+    height: auto !important;
+  }
+  .c2{
+    float: left;
+  }
+}
+#sv{
+  padding-top: 5px;
+    display: none;
+}
+.c1{
+  height: 700px ;
+ padding-bottom: 20px !important;
+  position: relative;
+  top: 55px;
+  border-radius: 8px;
+  background-color: #445175;;
+  text-align: center;
+  width: 50%;
+  z-index: 0;
+  float: left;
+
+}
+.c2{
+  height: 700px;
+ 
+  position: relative;
+  top: 55px;
+  border-radius: 8px;
+  background-color: #445175;;
+  text-align: center;
+  width: 48%;
+  z-index: 0;
+  float: right;
+  
+}
+footer{
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  
+}
+
+
+  </style>
+  <script>
+      function openNav() {
+  document.getElementById("mySidenav").style.width = "200px";
+  document.getElementById("test").style.display="none";
+  document.getElementById("main").style.marginLeft = "250px";
+
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("test").style.display="block";
+
+ 
+}
+  </script>
 </head>
-<body>
- <header>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-        <a class="navbar-brand">
-            <img src="logo1.png" width="40px" height="auto">
-        </a>
-        <p style="width: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 25px;color: #DFDFEF;margin-top: 10px;">COVID Dashboard</p>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ishan">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="ishan" style="font-size: 23px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="margin-right: 20px;">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="survival.html" style="margin-right: 20px;">Survival Rate Calculator</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html" style="margin-right: 20px;"> About</a>
-                </li>
-               
-            </ul>
-        </div>
-    </nav>
- </header>
-<div class="container-fluid" style="padding-left: 25px;">
-    <div class="row">
-        <div class="col-sm-7" style="margin: 10px 10px; background-color: #445175; color: #DFDFEF;text-align: center;border-radius: 8px;" >
-        
-            <h1 class="intro">
-                Developed By
-            </h1>
-            <p style="transition: 0.6s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;margin-top: 10px;" class="intro">'Ishan Nandwal'</p>
-            <h2 id="new" style="font-stretch: wider;font-size: 35px;transition: 0.6s ease;margin-top: 15px; ">Novel Corona-Virus Report</h2>
+  <body>
+         <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">home</a>
+        <a href="#">country data</a>
+        <a href="#">Contact</a>       
+        <a href="about.html">About</a>
+      </div>
+      
+      <!-- Use any element to open the sidenav -->
+      
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <div id="main">
+        <header>
+            <div class="navbar">
+               <div class="logo">
+                   <p> COVID DASHBOARD</p>
+               </div>
+               <div class="links">
+                   <a href="#" id="home">home</a>
+                   <a href="#" id="data">country data</a>
+                   <a href="about.html" id="about">about</a>
+                 <span onclick="openNav()"  id="sv">
+                    <svg viewBox="0 0 100 80" width="60" height="60">
+                        <path fill="#DFDFEF" d="M8.667,15h30c0.552,0,1-0.447,1-1s-0.448-1-1-1h-30c-0.552,0-1,0.447-1,1S8.114,15,8.667,15z"/>
+                        <path fill="#DFDFEF" d="M8.667,37h30c0.552,0,1-0.447,1-1s-0.448-1-1-1h-30c-0.552,0-1,0.447-1,1S8.114,37,8.667,37z"/>
+                        <path fill="#DFDFEF" d="M8.667,26h30c0.552,0,1-0.447,1-1s-0.448-1-1-1h-30c-0.552,0-1,0.447-1,1S8.114,26,8.667,26z"/>
+                      </svg></span>
+               </div>
+            </div>
+        </header>
+        <div class="c1">
+          <h1 class="intro">
+            Developed By
+        </h1>
+        <p style="transition: 0.6s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;margin-top: 10px;" class="intro">'Ishan Nandwal'</p>
+        <h2 id="new" style="font-stretch: wider;transition: 0.6s ease;margin-top: 15px; ">Novel Corona-Virus Report</h2>
+  
+    <div class="input" style="text-align: center;margin-top: 50px;font-size: xx-large;">
+        <P style="color: black;font-size: 25px;">ENTER COUNTRY</P>
+        <input id="name" placeholder="Search Data" type="text" style="text-transform: capitalize; width: 28%;height: 30px;font-size: 15px; background-color: #364061;border: none;border-radius: 8px; color: #DFDFEF;"><br>
     
-        <div class="input" style="text-align: center;margin-top: 50px;font-size: xx-large;">
-            <P style="color: black;">ENTER COUNTRY</P>
-            <input id="name" placeholder="Search Data" type="text" style="text-transform: capitalize; width: 28%;height: 30px;font-size: 15px; background-color: #364061;border: none;border-radius: 8px; color: #DFDFEF;"><br>
-        
-            <p style="font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Please Enter Carefully(Case Sensitive)</p>
-            <button id="sub" style="border-radius: 8px; cursor: pointer; width: 80px;height: 35px;margin:20px 0px 10px 0px; background-color: black;color:#DFDFEF; border: none;font-size: 15px;">SUBMIT</button>
-        </div>
-        
-        </div>
-        <div class="col-sm-4" style="margin: 10px 10px 10px 10px; background-color: #445175; color: #DFDFEF;text-align: center;border-radius: 8px;"> 
-            <p style="color: #DFDFEF; width: auto; text-align: center;padding-top: 15px;margin-bottom:0px;font-size: 40px;font-weight: bolder;">Stats</p>
-            <div >
-                <p id="temp_country" style="text-transform: capitalize; text-align: center;color:#DFDFEF ;font-size: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;padding-top: 10px;">World</p>
-                <div id="load" style="color: #65DD9B;">
-    <span class="spinner-grow spinner-grow-sm"></span>
-    Fetching Data..
-                </div>                
-                <p id="time_date" style="text-align: center;color:#DFDFEF ;font-size: 15px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;padding-top: 10px;"></p>
+   
             </div>
-            <div class="country_data">
-                <p class="ol">Total Confirmed</p>
-                <p id="li1" style="font-size:30px;text-align: center;font-weight: bolder;color: #65DD9B;" >168272</p>
-                <p class="ol">Total Deceased</p>
-                <p id="li2" style="font-size:30px;text-align: center;font-weight: bolder;color:#F65164;" >168272</p>
-                <p class="ol">Total Critical</p>
-                <p id="li3" style="font-size:30px;text-align: center;font-weight: bolder;color: #FF9D00;" >168272</p>
-                <p class="ol">Total Active</p>
-                <p id="li4" style="font-size:30px;text-align: center;font-weight: bolder;color: #F8F540;" >168272</p>
-                <p class="ol">Total Recovered</p>
-                <p id="li5" style="font-size:30px;text-align: center;font-weight: bolder;color:#449BE2;" >168272</p>
-            </div>
-        
-        
-        </div>
-
-    </div>
-</div>
-
-<script src="script.js"></script>
+             </div>
+             <div class="c2">
+              <p style="color: #DFDFEF; width: auto; text-align: center;padding-top: 15px;margin-bottom:0px;font-size: 40px;font-weight: bolder;">Stats</p>
+              <div >
+                  <p id="temp_country" style="text-transform: capitalize; text-align: center;color:#DFDFEF ;font-size: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;padding-top: 10px;">World</p>
+                  <div id="load" style="color: #65DD9B;">
+      <span class="spinner-grow spinner-grow-sm"></span>
+      Fetching Data..
+                  </div>                
+                  <p id="time_date" style="text-align: center;color:#DFDFEF ;font-size: 15px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;padding-top: 10px;"></p>
+              </div>
+              <div class="country_data">
+                  <p class="ol">Total Confirmed</p>
+                  <p id="li1" style="font-size:30px;text-align: center;font-weight: bolder;color: #65DD9B;" >168272</p>
+                  <p class="ol">Total Deceased</p>
+                  <p id="li2" style="font-size:30px;text-align: center;font-weight: bolder;color:#F65164;" >168272</p>
+                  <p class="ol">Total Critical</p>
+                  <p id="li3" style="font-size:30px;text-align: center;font-weight: bolder;color: #FF9D00;" >168272</p>
+                  <p class="ol">Total Active</p>
+                  <p id="li4" style="font-size:30px;text-align: center;font-weight: bolder;color: #F8F540;" >168272</p>
+                  <p class="ol">Total Recovered</p>
+                  <p id="li5" style="font-size:30px;text-align: center;font-weight: bolder;color:#449BE2;" >168272</p>
+             
+             </div>
+            
+     <script src="script.js"></script>
+    
+    
+   </div>  
+ </div>
+   
 </body>
 </html>
